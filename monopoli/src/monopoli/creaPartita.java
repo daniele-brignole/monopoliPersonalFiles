@@ -15,7 +15,8 @@ public class creaPartita {
 	public void setLivello(int livello){
 		this.livello = livello;
 	}
-	public void generaPartita(){
-		
+	public void start(Giocatore g){
+		g.setSoldi(soldiIniziali);
+		g.setContratti(contrattiIniziali);
 	}
 }

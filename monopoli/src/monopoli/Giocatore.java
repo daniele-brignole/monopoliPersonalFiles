@@ -10,7 +10,14 @@ public class Giocatore {
 	private int ris2;
 	private int sumofDice;
 	private boolean prigion;
+	private int contratti;
 	
+	public int getContratti() {
+		return contratti;
+	}
+	public void setContratti(int contratti) {
+		this.contratti = contratti;
+	}
 	public void pay(Giocatore g, int soldi){
 		this.soldi = this.soldi - soldi;
 		g.soldi = g.soldi + soldi;
@@ -36,5 +43,35 @@ public class Giocatore {
 	}
 	public void setFree(){
 		this.prigion = false;
+	}
+	public void addPartita(int l, int g,int s, int c){
+		creaPartita cP = new creaPartita();
+		cP.setLivello(l);
+		cP.setImpostazioni(g, s, c);
+		cP.start(this);
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public int getSoldi() {
+		return soldi;
+	}
+	public void setSoldi(int soldi) {
+		this.soldi = soldi;
+	}
+	public int getSumofDice() {
+		return sumofDice;
+	}
+	public void setSumofDice(int sumofDice) {
+		this.sumofDice = sumofDice;
 	}
 }
