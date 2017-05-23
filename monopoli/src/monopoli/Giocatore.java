@@ -1,5 +1,9 @@
 package monopoli;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Giocatore {
 
 	private String nome;
@@ -10,8 +14,9 @@ public class Giocatore {
 	private int ris2;
 	private int sumofDice;
 	private boolean prigion;
+	private ArrayList<Proprietà> myProperties = null;
 	private int contratti;
-	
+	private Pedina pedina = null;
 	public int getContratti() {
 		return contratti;
 	}
@@ -49,6 +54,28 @@ public class Giocatore {
 		cP.setLivello(l);
 		cP.setImpostazioni(g, s, c);
 		cP.start(this);
+	}
+	public int makeChoice() throws IOException{
+		Scanner scan = new Scanner(System.in);
+		int choice = scan.nextInt();
+		scan.close();
+		if (choice == 0 || choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5) return choice;
+		else return -1;
+	}
+	public void setPedina(Pedina pedina){
+		this.pedina = pedina;
+	}
+	public Pedina getPedina(){
+		return pedina;
+	}
+	public void addPropriety(Proprietà p){
+		myProperties.add(p);
+	}
+	public void removeProperty(Proprietà p){
+		myProperties.remove(p);
+	}
+	public ArrayList<Proprietà> getListOfProperties(){
+		return this.myProperties;
 	}
 	public String getNome() {
 		return nome;
