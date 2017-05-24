@@ -15,6 +15,7 @@ public class Tabellone {
 		caselle[9] = new Proprietà(9,"Viale Vesuvio",12000,2);
 		caselle[10] = new Proprietà(10,"Prigione/transito",0,-1);
 		caselle[11] = new Proprietà(11,"Via Accademia", 14000,3);
+		caselle[12] = new Proprietà(12,"Via brigno", 50000,4);
 	}
 	public Casella getCasella(int index){
 		return caselle[index];

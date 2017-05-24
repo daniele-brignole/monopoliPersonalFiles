@@ -1,6 +1,7 @@
 package monopoli;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Proprietà extends Casella {
 	/*
@@ -27,7 +28,9 @@ public class Proprietà extends Casella {
 		this.valore = valore;
 		this.zona = colore;
 		// TODO Auto-generated constructor stub
+		
 	}
+	
 	public void pagaAffitto(Giocatore pagante){
 		
 	}
@@ -83,6 +86,29 @@ public class Proprietà extends Casella {
 		g.setSoldi(g.getSoldi() - this.valore);
 		g.addPropriety(this);
 		return true;
+	}
+
+	@Override
+	void attivaEffetto(Giocatore g,Scanner scan) {
+		// TODO Auto-generated method stub
+		if(!stato) {
+			System.out.println("Comprare o non comprare? s/n");
+			//scan = new Scanner(System.in);
+			String risp = scan.next();
+			//scan.close();
+			if (risp == "s") compra(g);
+			else if(risp == "n") return;
+			else {
+				System.out.println("Input errato");
+				attivaEffetto(g,scan);
+				}
+			}
+		else pagaAffitto(g);
+	}
+
+	@Override
+	String getNome() {
+		return this.nome;
 	}
 
 }

@@ -17,6 +17,9 @@ public class Giocatore {
 	private ArrayList<Proprietà> myProperties = null;
 	private int contratti;
 	private Pedina pedina = null;
+	
+	Giocatore(String nome, String psw){this.nome=nome;password=psw;}
+	
 	public int getContratti() {
 		return contratti;
 	}
@@ -49,11 +52,13 @@ public class Giocatore {
 	public void setFree(){
 		this.prigion = false;
 	}
-	public void addPartita(int l, int g,int s, int c){
+	public Partita addPartita(int l, int g,int s, int c){
+		Partita partita = null;
 		creaPartita cP = new creaPartita();
 		cP.setLivello(l);
 		cP.setImpostazioni(g, s, c);
-		cP.start(this);
+		partita = cP.start(this);
+		return partita;
 	}
 	public int makeChoice() throws IOException{
 		Scanner scan = new Scanner(System.in);

@@ -1,0 +1,11 @@
+package monopoli;
+
+public abstract class Casella {
+	protected int posizione;
+	protected String nome;
+	Casella(int p, String n) {
+	}
+		
+	abstract void attivaEffetto(Giocatore g);
+	abstract String getNome();
+}

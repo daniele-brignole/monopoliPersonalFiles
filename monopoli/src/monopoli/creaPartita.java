@@ -8,7 +8,7 @@ public class creaPartita {
 	private int soldiIniziali;
 	private int numeroGiocatori;
 	private int contrattiIniziali;
-	private ArrayList<Giocatore> partecipanti;
+	private ArrayList<Giocatore> partecipanti = new ArrayList<Giocatore>();
 	
 	public void setImpostazioni(int numeroGiocatori,int soldiIniziali, int contrattiIniziali){
 		this.numeroGiocatori = numeroGiocatori;
@@ -18,13 +18,12 @@ public class creaPartita {
 	public void setLivello(int livello){
 		this.livello = livello;
 	}
-	public void start(Giocatore g){
+	public Partita start(Giocatore g){
 		g.setSoldi(soldiIniziali);
 		g.setContratti(contrattiIniziali);
-		while(true){
-			//carica i giocatori
-			break;
-		}
+		partecipanti.add(g);
 		Partita partita = new Partita(numeroGiocatori,partecipanti);
+		if (partita != null) System.out.println("gioco creato");
+		return partita;
 	}
 }

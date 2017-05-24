@@ -1,10 +1,24 @@
 package monopoli;
 
+import java.util.Scanner;
+
 public class Imprevisti extends Casella{
 
 	Imprevisti(int p, String n) {
 		super(p, n);
 		posizione = p; nome = n;
+	}
+
+	@Override
+	void attivaEffetto(Giocatore g,Scanner scan) {
+		// TODO Auto-generated method stub
+		//pesca
+	}
+
+	@Override
+	String getNome() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

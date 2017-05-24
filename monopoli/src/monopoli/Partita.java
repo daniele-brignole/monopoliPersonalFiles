@@ -6,11 +6,14 @@ import java.util.ArrayList;
 public class Partita {
 	private int nGiocatori;
 	private int counterTurni;
-	private ArrayList<Giocatore> players;
-	private ArrayList<Giocatore> order;
+	private ArrayList<Giocatore> players = new ArrayList<Giocatore>();
+	private ArrayList<Giocatore> order = new ArrayList<Giocatore>();
 	private Giocatore giocatoreDiTurno;
-	private ArrayList<Integer> risultati;
+	private ArrayList<Integer> risultati= new ArrayList<Integer>();
 	private int g = 0;
+	Partita(Partita p){
+		
+	};
 	Partita(int nG, ArrayList<Giocatore> players){
 		nGiocatori = nG;
 		this.players = new ArrayList<Giocatore>(players);
@@ -62,6 +65,8 @@ public class Partita {
 				break;
 			case 1:
 				order.get(i).setPedina(pera);
+				System.out.println("Hai scelto la pera");
+				pera.setProprietario(order.get(i));
 				break;
 			case 2:
 				order.get(i).setPedina(Candela);
