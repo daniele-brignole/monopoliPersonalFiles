@@ -24,10 +24,10 @@ public class main {
 		show("Imposta il numero di contratti iniziali:");
 		contratti = s1.nextInt();
 		partita = g.addPartita(lev, gioc, soldi, contratti);
-		show("Scegli la tua pedina ....");
+		show("Scegli la tua pedina 0 fungo 1 pera 2 candela 3 cactus 4 arancia 5 vino ");
 		partita.generaPedine();
 		show("Tira i dadi e muovi la pedina");
-		g.getPedina().muovi(s1);
+		g.getPedina().muovi();
 		show("Sei su " + g.getPedina().getPosizione().getNome());
 		
 	}

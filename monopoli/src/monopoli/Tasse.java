@@ -10,15 +10,14 @@ public class Tasse extends Casella{
 	}
 
 	@Override
-	void attivaEffetto(Giocatore g,Scanner scan) {
-		// TODO Auto-generated method stub
+	void attivaEffetto(Giocatore g) {
+		System.out.println("Tasse devi pagare 1000 lire!");
 		g.setSoldi(g.getSoldi()-1000);
 	}
 
 	@Override
 	String getNome() {
-		// TODO Auto-generated method stub
-		return null;
+		return nome;
 	}
 
 }

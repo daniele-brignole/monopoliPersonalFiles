@@ -14,12 +14,18 @@ public class Giocatore {
 	private int ris2;
 	private int sumofDice;
 	private boolean prigion;
-	private ArrayList<Proprietà> myProperties = null;
+	private ArrayList<Proprietà> myProperties = new ArrayList<Proprietà>();
 	private int contratti;
 	private Pedina pedina = null;
 	
 	Giocatore(String nome, String psw){this.nome=nome;password=psw;}
-	
+	public String getProprietàinLista(){
+		String lista = "";
+		for(int i = 0; i< myProperties.size();i++){
+			lista = lista + myProperties.get(i).getNome() + " ";
+		}
+		return lista;
+	}
 	public int getContratti() {
 		return contratti;
 	}
@@ -63,7 +69,7 @@ public class Giocatore {
 	public int makeChoice() throws IOException{
 		Scanner scan = new Scanner(System.in);
 		int choice = scan.nextInt();
-		scan.close();
+		//scan.close();
 		if (choice == 0 || choice == 1 || choice == 2 || choice == 3 || choice == 4 || choice == 5) return choice;
 		else return -1;
 	}

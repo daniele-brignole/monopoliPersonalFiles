@@ -10,7 +10,7 @@ public class inPrigione extends Casella{
 	}
 
 	@Override
-	void attivaEffetto(Giocatore g,Scanner scan) {
+	void attivaEffetto(Giocatore g) {
 		// TODO Auto-generated method stub
 		g.setPrigion();
 	}

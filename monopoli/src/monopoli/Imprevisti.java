@@ -10,15 +10,14 @@ public class Imprevisti extends Casella{
 	}
 
 	@Override
-	void attivaEffetto(Giocatore g,Scanner scan) {
+	void attivaEffetto(Giocatore g) {
 		// TODO Auto-generated method stub
-		//pesca
+		System.out.println("Pesca un imprevisto!");
 	}
 
 	@Override
 	String getNome() {
-		// TODO Auto-generated method stub
-		return null;
+		return nome;
 	}
 
 }

@@ -21,18 +21,28 @@ public class Proprietà extends Casella {
 	private boolean ipotecata = false;
 	private int numeroCase = 0;
 	private int albergo = 0;
-	Proprietà(int p, String n, int valore, int colore) {
+	private Contratto c;
+	Proprietà(int p, String n, int valore, int colore,int affitto,int ipoteca) {
 		super(p,n);
 		posizione = p;
 		nome = n;
 		this.valore = valore;
 		this.zona = colore;
+		c= new Contratto(affitto,ipoteca,this);
 		// TODO Auto-generated constructor stub
 		
 	}
-	
+	public Giocatore getProprietario(){
+		return proprietario;
+	}
+	public boolean isIpotecata(){
+		return ipotecata;
+	}
 	public void pagaAffitto(Giocatore pagante){
-		
+		int affitto = c.calcolaAffitto();
+		int remainder = (pagante.getSoldi() - affitto);
+		//if (remainder < 0 ) pagante.gameOver(); //per motivi di implementazione il giocatore perde
+		pagante.setSoldi(remainder);
 	}
 	public boolean isOccupata(){
 		return stato;
@@ -85,22 +95,26 @@ public class Proprietà extends Casella {
 		}
 		g.setSoldi(g.getSoldi() - this.valore);
 		g.addPropriety(this);
+		ipotecata = true;
 		return true;
 	}
 
 	@Override
-	void attivaEffetto(Giocatore g,Scanner scan) {
+	void attivaEffetto(Giocatore g) {
 		// TODO Auto-generated method stub
 		if(!stato) {
 			System.out.println("Comprare o non comprare? s/n");
-			//scan = new Scanner(System.in);
+			Scanner scan = new Scanner(System.in);
 			String risp = scan.next();
 			//scan.close();
-			if (risp == "s") compra(g);
-			else if(risp == "n") return;
+			if (risp.equals("s")) compra(g);
+			else if(risp.equals("n")) {
+				System.out.println("Non hai comprato la proprietà, verrà messa all'asta");
+				return;
+			}
 			else {
 				System.out.println("Input errato");
-				attivaEffetto(g,scan);
+				attivaEffetto(g);
 				}
 			}
 		else pagaAffitto(g);

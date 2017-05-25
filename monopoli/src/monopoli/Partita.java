@@ -62,6 +62,8 @@ public class Partita {
 			switch(choice){
 			case 0:
 				order.get(i).setPedina(fungo);
+				System.out.println("Hai scelto il fungo");
+				fungo.setProprietario(order.get(i));
 				break;
 			case 1:
 				order.get(i).setPedina(pera);
@@ -70,15 +72,24 @@ public class Partita {
 				break;
 			case 2:
 				order.get(i).setPedina(Candela);
+				System.out.println("Hai scelto la candela");
+				Candela.setProprietario(order.get(i));
 				break;
 			case 3:
 				order.get(i).setPedina(Cactus);
+				System.out.println("Hai scelto il cactus");
+				Cactus.setProprietario(order.get(i));
 				break;
 			case 4:
 				order.get(i).setPedina(Arancia);
+				System.out.println("Hai scelto l'arancia");
+				Arancia.setProprietario(order.get(i));
 				break;
 			case 5:
 				order.get(i).setPedina(Vino);
+				System.out.println("Hai scelto il vino");
+				Vino.setProprietario(order.get(i));
+				break;
 			}
 		}
 	}

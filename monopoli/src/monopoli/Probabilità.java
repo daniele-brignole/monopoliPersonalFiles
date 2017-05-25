@@ -10,7 +10,7 @@ public class Probabilità extends Casella{
 	}
 
 	@Override
-	void attivaEffetto(Giocatore g,Scanner scan) {
+	void attivaEffetto(Giocatore g) {
 		// TODO Auto-generated method stub
 		
 	}

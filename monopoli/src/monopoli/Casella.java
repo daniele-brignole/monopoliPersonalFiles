@@ -8,6 +8,6 @@ public abstract class Casella {
 	Casella(int p, String n) {
 	}
 		
-	abstract void attivaEffetto(Giocatore g,Scanner scan);
+	abstract void attivaEffetto(Giocatore g);
 	abstract String getNome();
 }

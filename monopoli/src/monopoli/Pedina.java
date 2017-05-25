@@ -9,13 +9,14 @@ public class Pedina {
 		tab = new Tabellone();
 		
 		attuale = tab.getCasella(0);
-		System.out.println("attuale: "+ attuale.getNome());
+		//System.out.println("attuale: "+ attuale.getNome());
 		
 	}
 	public void setProprietario(Giocatore g){
 		proprietario = g;
 	}
-	public void muovi(Scanner scan){
+	public void muovi(){
+		//if(scan == null) System.out.println("lo scanner è nullo");
 		int d1 = proprietario.tiradado1();
 		System.out.println(d1);
 		int d2 = proprietario.tiradado2();
@@ -32,7 +33,8 @@ public class Pedina {
 		attuale = tab.getCasella(posizione);
 		//if (tab.getCasella(posizione)== null) System.out.println("casella inesistente");
 		System.out.println(tab.getCasella(posizione).getNome());
-		attuale.attivaEffetto(proprietario,scan);
+		attuale.attivaEffetto(proprietario);
+		System.out.println("Dati "+this.proprietario.getNome()+ " Proprietà: "+ proprietario.getProprietàinLista() + " soldi: " + proprietario.getSoldi());
 		if(proprietario.isDouble(d1, d2)){
 			System.out.println("doppio");
 			ntiri++;
@@ -41,7 +43,7 @@ public class Pedina {
 				ntiri = 0;
 				return;
 			}
-			muovi(scan);
+			muovi();
 		}
 		
 	}
@@ -51,7 +53,7 @@ public class Pedina {
 	private String nome;
 	private int posizione;
 	private Tabellone tab;
-	private Casella attuale = new Proprietà(0,"Via",0,-1);
+	private Casella attuale = new Proprietà(0,"Via",0,-1,1,1);
 	private int ntiri = 0;
 	private Giocatore proprietario = null;
 }
