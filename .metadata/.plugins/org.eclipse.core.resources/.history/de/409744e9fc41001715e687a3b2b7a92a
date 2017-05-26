@@ -151,7 +151,7 @@ public class Giocatore {
 	}
 	/**
 	 * 
-	 * @param p rimuove una proprietà dalla lista di proprietà possedute dal giocatore
+	 * @param p 
 	 */
 	public void removeProperty(Proprietà p){
 		myProperties.remove(p);

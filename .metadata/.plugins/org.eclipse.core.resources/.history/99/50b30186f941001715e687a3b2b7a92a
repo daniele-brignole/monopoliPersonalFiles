@@ -42,7 +42,7 @@ public class Proprietà extends Casella {
 		int affitto = c.calcolaAffitto();
 		int remainder = (pagante.getSoldi() - affitto);
 		//if (remainder < 0 ) pagante.gameOver(); //per motivi di implementazione il giocatore perde
-		pagante.pay(this.proprietario, affitto);;
+		pagante.setSoldi(remainder);
 	}
 	public boolean isOccupata(){
 		return stato;
@@ -93,7 +93,7 @@ public class Proprietà extends Casella {
 			System.out.println("Soldi insufficienti");
 			return false;
 		}
-		g.pay(this.valore);;
+		g.setSoldi(g.getSoldi() - this.valore);
 		g.addPropriety(this);
 		ipotecata = true;
 		return true;

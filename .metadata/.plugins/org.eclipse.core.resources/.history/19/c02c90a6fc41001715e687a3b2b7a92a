@@ -124,9 +124,8 @@ public class Giocatore {
 	}
 	/**
 	 * 
-	 * @return intero inserito da console se è 0....5, -1 altrimenti
+	 * @return
 	 * @throws IOException
-	 * riceve un intero da console, controlla se è un numero da 0 a 5 e lo ritorna
 	 */
 	public int makeChoice() throws IOException{
 		Scanner scan = new Scanner(System.in);
@@ -141,18 +140,9 @@ public class Giocatore {
 	public Pedina getPedina(){
 		return pedina;
 	}
-	/**
-	 * 
-	 * @param p proprietà aggiunta
-	 * aggiunge una proprietà alla lista di proprietà possedute dal giocatore
-	 */
 	public void addPropriety(Proprietà p){
 		myProperties.add(p);
 	}
-	/**
-	 * 
-	 * @param p rimuove una proprietà dalla lista di proprietà possedute dal giocatore
-	 */
 	public void removeProperty(Proprietà p){
 		myProperties.remove(p);
 	}

@@ -12,7 +12,7 @@ public class Tasse extends Casella{
 	@Override
 	void attivaEffetto(Giocatore g) {
 		System.out.println("Tasse devi pagare 1000 lire!");
-		g.pay(1000);
+		g.setSoldi(g.getSoldi()-1000);
 	}
 
 	@Override
