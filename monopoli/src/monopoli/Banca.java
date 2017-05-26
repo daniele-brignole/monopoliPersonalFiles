@@ -1,5 +1,10 @@
 package monopoli;
-
+/**classe della banca, contiene le case e gli alberghi totali
+ * 
+ * @author Daniele Brignole
+ * 
+ *
+ */
 public class Banca {
 	private static int caseTotali = 32;
 	private static int alberghi = 12;

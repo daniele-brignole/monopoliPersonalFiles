@@ -1,11 +1,23 @@
 package monopoli;
-
+/**classe che rappresenta il contratto di una proprietà, serve per contenere i 
+ * dati di ipoteca e dell'affitto
+ * 
+ * @author Daniele Brignole
+ * 
+ *
+ */
 public class Contratto {
 	private int affitto;
 	private int houses;
 	private boolean albergo;
 	private int ipoteca;
 	private Proprietà associata = null;
+	/**inizializza l'oggetto contratto
+	 * 
+	 * @param affitto affitto base non modificato della proprietà
+	 * @param ipoteca valore di ipoteca della casa
+	 * @param associata proprietà associata a questo contratto
+	 */
 	public Contratto(int affitto,int ipoteca, Proprietà associata) {
 		super();
 		this.affitto = affitto;
@@ -14,6 +26,14 @@ public class Contratto {
 		this.albergo = false;
 		this.ipoteca = ipoteca;
 	}
+	/** metodo che calcola l'affitto di questa proprietà in base a
+	 * - zona completa
+	 * - numero di case
+	 * - presenza di albergo
+	 * 
+	 * @return l'affitto effettivo della proprietà
+	 *
+	 */
 	public int calcolaAffitto(){
 		if (associata.isIpotecata()) return  0;
 		else {

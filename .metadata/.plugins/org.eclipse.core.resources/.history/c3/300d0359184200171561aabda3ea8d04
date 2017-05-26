@@ -1,0 +1,31 @@
+package monopoli;
+
+import java.util.Scanner;
+/** classe per la casella in prigione
+ * 
+ * @author Daniele Brignole
+ *
+ *
+ */
+public class inPrigione extends Casella{
+
+	inPrigione(int p, String n) {
+		super(p, n);
+		posizione = p; nome = n;
+	}
+/**manda in prigione il giocatore che finisce su questa casella
+ * 
+ */
+	@Override
+	void attivaEffetto(Giocatore g) {
+		// TODO Auto-generated method stub
+		g.setPrigion();
+	}
+
+	@Override
+	String getNome() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

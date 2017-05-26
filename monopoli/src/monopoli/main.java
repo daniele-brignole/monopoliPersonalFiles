@@ -2,7 +2,13 @@ package monopoli;
 
 import java.io.IOException;
 import java.util.Scanner;
-
+/**classe main per verificare la corretta compilazione senza eccezioni 
+ * delle funzioni da osservare. Ha uno scopo per lo più personale
+ *
+ * 
+ * @author Daniele Brignole
+ *  
+ */
 public class main {
 
 	public static void main(String[] args) {
@@ -31,6 +37,11 @@ public class main {
 		show("Sei su " + g.getPedina().getPosizione().getNome());
 		
 	}
+	/**funzione per semplificare le stampe a video
+	 * 
+	 * @param text testo da mostrare
+	 * 
+ 	 */
 	public static void show(String text){
 		System.out.println(text);
 	}

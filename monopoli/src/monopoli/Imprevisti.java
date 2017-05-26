@@ -1,14 +1,26 @@
 package monopoli;
 
 import java.util.Scanner;
-
+/**classe per la casella degli imprevisti
+ * 
+ * @author Daniele Brignole
+ * 
+ *
+ */
 public class Imprevisti extends Casella{
-
+	/**inizializza l'oggetto imprevisto
+	 * 
+	 * @param p posizione della casella
+	 * @param n nome della casella
+	 */
 	Imprevisti(int p, String n) {
 		super(p, n);
 		posizione = p; nome = n;
 	}
-
+/**non avendo definito precedentemente il caso dell'imprevisto
+ * il metodo da una semplice stampa a video
+ * 
+ */
 	@Override
 	void attivaEffetto(Giocatore g) {
 		// TODO Auto-generated method stub

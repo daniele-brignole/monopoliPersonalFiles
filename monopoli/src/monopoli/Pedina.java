@@ -1,13 +1,17 @@
 package monopoli;
 
 import java.util.Scanner;
-/**
+/**classe che rappresenta la pedina che si muove sul tabellone
  * 
  * @author Daniele Brignole
- * classe che rappresenta la pedina che si muove sul tabellone
+ * 
  *
  */
 public class Pedina {
+	/**inizializza la pedina e la mette nella posizione iniziale del tabellone
+	 * 
+	 * @param nome nome della pedina
+	 */
 	Pedina(String nome){
 		this.nome = nome;
 		posizione = 0;
@@ -20,10 +24,10 @@ public class Pedina {
 	public void setProprietario(Giocatore g){
 		proprietario = g;
 	}
-	/**
-	 * muove la pedina di una quantità di caselle pari alla somma di due dadi
+	/**muove la pedina di una quantità di caselle pari alla somma di due dadi
 	 * se il tiro è un doppio si tira di nuovo
 	 * se è la terza volta che si tira il giocatore va in prigione
+	 * 
 	 */
 	public void muovi(){
 		//if(scan == null) System.out.println("lo scanner è nullo");

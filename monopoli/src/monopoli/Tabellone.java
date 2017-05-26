@@ -1,11 +1,14 @@
 package monopoli;
-/**
+/**classe che rappresenta il tabellone di gioco
  * 
  * @author Daniele Brignole
- *classe che rappresenta il tabellone di gioco
+ *
  */
 public class Tabellone {
-	private Casella[] caselle = new Casella[13];
+	private Casella[] caselle = new Casella[12];
+	/**inizializza il tabellone impostando le 13 caselle
+	 * 
+	 */
 	Tabellone(){
 		caselle[0] = new Proprietà(0,"Via",0,-1,1,1);
 		caselle[1] = new Proprietà(1,"Vicolo Corto",6000,1,1,1);
@@ -21,11 +24,11 @@ public class Tabellone {
 		caselle[11] = new Proprietà(11,"Via Accademia", 14000,3,1,1);
 		caselle[12] = new Proprietà(12,"Via brigno", 50000,4,1,1);
 	}
-	/**
+	/**cerca la casella sul tabellone corrispondente alla posizione richiesta
 	 * 
 	 * @param index posizione ricercata sul tabellone
 	 * @return la casella corrispondente all'index
-	 * cerca la casella sul tabellone corrispondente alla posizione richiesta
+	 * 
 	 */
 	public Casella getCasella(int index){
 		return caselle[index];

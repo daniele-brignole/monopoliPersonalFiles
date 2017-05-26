@@ -47,7 +47,7 @@
 		<item value="false" key="nodeprecated"/>
 		<item value="false" key="nonavbar"/>
 		<item value="" key="docletpath"/>
-		<item value="" key="javadoc_command_history"/>
+		<item value="C:\Program Files\Java\jdk1.7.0_75\bin\javadoc.exe;C:\Users\Tiziana\Documents\GitHub\monopoliPersonalFiles\monopoli\bin\.gitignore;C:\Users\Tiziana\Documents\GitHub\monopoliPersonalFiles\monopoli\.project;C:\Users\Tiziana\Documents\GitHub\monopoliPersonalFiles\monopoli\src\monopoli\Banca.java" key="javadoc_command_history"/>
 		<item value="1.8" key="source"/>
 		<item value="true" key="version"/>
 		<item value="" key="docletname"/>

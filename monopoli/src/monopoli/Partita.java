@@ -2,7 +2,14 @@ package monopoli;
 
 import java.io.IOException;
 import java.util.ArrayList;
-
+/**classe che rappresenta una partita a monopoli, imposta 
+ * alcune opzioni e decide l'ordine dei giocatori. Gestisce 
+ * gli eventi nel corso della partita
+ * 
+ * @author Daniele Brignole
+ * 
+ *
+ */
 public class Partita {
 	private int nGiocatori;
 	private int counterTurni;
@@ -14,6 +21,12 @@ public class Partita {
 	Partita(Partita p){
 		
 	};
+	/**costruisce l'oggetto partita inizializzando la lista dei giocatori, 
+	 * quindi determina l'ordine in cui essi agiranno
+	 * 
+	 * @param nG numero di giocatori
+	 * @param players lista dei giocatori non ordinata
+	 */
 	Partita(int nG, ArrayList<Giocatore> players){
 		nGiocatori = nG;
 		this.players = new ArrayList<Giocatore>(players);
@@ -33,11 +46,18 @@ public class Partita {
 		}
 		giocatoreDiTurno = this.order.get(0);
 	}
+	/**passa il turno al giocatore successivo
+	 * 
+	 */
 	public void passaGiocatore(){
 		g++;
 		if (g > nGiocatori) g = 0;
 		giocatoreDiTurno = order.get(g);
 	}
+	/**genera gli oggetti pedine disponibili e fa scegliere ai giocatori in ordine la 
+	 * pedina che desiderano avere
+	 * 
+	 */
 	public void generaPedine(){
 		Pedina fungo = new Pedina("Fungo");
 		Pedina pera = new Pedina("Pera");

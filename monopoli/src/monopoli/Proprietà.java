@@ -2,7 +2,11 @@ package monopoli;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
+/**
+ * 
+ * @author Daniele Brignole
+ *
+ */
 public class Proprietà extends Casella {
 	/*
 	private static int fucsia = 1;
@@ -22,6 +26,15 @@ public class Proprietà extends Casella {
 	private int numeroCase = 0;
 	private int albergo = 0;
 	private Contratto c;
+	/**inizializza l'oggetto proprietà con i valori di parametro
+	 * 
+	 * @param p posizione della proprietà
+	 * @param n nome della proprietà
+	 * @param valore valore di acquisto della proprietà
+	 * @param colore colore della zona di appartenenza della proprietà
+	 * @param affitto valore base di affitto della proprietà
+	 * @param ipoteca valore di ipoteca della proprietà
+	 */
 	Proprietà(int p, String n, int valore, int colore,int affitto,int ipoteca) {
 		super(p,n);
 		posizione = p;
@@ -38,6 +51,13 @@ public class Proprietà extends Casella {
 	public boolean isIpotecata(){
 		return ipotecata;
 	}
+	/**metodo che trasferisce i soldi dell'affitto dal giocatore che 
+	 * è finito sulla casella della proprietà a quello che la possiede,
+	 * a patto che essa non sia ipotecata.
+	 * 
+	 * @param pagante giocatore che deve pagare l'affitto
+	 *  
+	 */
 	public void pagaAffitto(Giocatore pagante){
 		int affitto = c.calcolaAffitto();
 		int remainder = (pagante.getSoldi() - affitto);
@@ -47,6 +67,13 @@ public class Proprietà extends Casella {
 	public boolean isOccupata(){
 		return stato;
 	}
+	/**metodo per la costruzione delle case su una proprietà posseduta
+	 * 
+	 * @param ncase numero di case da costruire
+	 * @param banca banca a cui prendere le case
+	 * @return true se l'operazione è andata a buon fine, false altrimenti
+	 * 
+	 */
 	public boolean costruisciCase(int ncase, Banca banca){
 		int remainder = banca.getCaseTotali() - ncase;
 		if ( remainder < 0 ) {
@@ -59,12 +86,18 @@ public class Proprietà extends Casella {
 			return true;
 		}
 	}
-	public boolean costruisciAlbergo(int albergo, Banca banca){
+	/**metodo per la costruzione di un albergo su una proprietà con almeno 4 case
+	 *  
+	 * @param banca banca a cui prendere l'albergo
+	 * @return true se l'operazione va a buon fine, false altrimenti
+	 * 
+	 */
+	public boolean costruisciAlbergo(Banca banca){
 		if (numeroCase != 4){
 			System.out.println("Case non sufficienti, necessarie 4 case per costruire l'albergo");
 			return false;
 		}
-		int remainder = banca.getAlberghi() - albergo;
+		int remainder = banca.getAlberghi() - 1;
 		if ( remainder < 0 ) {
 			System.out.println("Albergho non disponibile in banca");
 			return false;
@@ -75,6 +108,14 @@ public class Proprietà extends Casella {
 			return true;
 		}
 	}
+	/**metodo che controlla se il giocatore possiede tutte le proprietà 
+	 * della stessa zona di quella considerata
+	 * 
+	 * @param g giocatore che possiede l'insieme di case da controllare
+	 * @return true se il giocatore possiede l'intera zona, 
+	 * 		quindi tutte le proprietà di uno stesso colore, false altrimenti
+	 * 
+	 */
 	public boolean isZonaCompleta(Giocatore g){
 		int zoneTotali; int z=0;
 		if (zona == 1 || zona == 8) zoneTotali = 2;
@@ -100,6 +141,13 @@ public class Proprietà extends Casella {
 	}
 
 	@Override
+	/**Metodo che controlla se la proprietà su cui è finito il giocatore 
+	 * è libera o occupata e ne permette l'acquisto nel primo caso (con possibile rifiuto 
+	 * e conseguente messa in asta della proprietà, non definito) o
+	 * il agamento dell'affitto nel secondo caso
+	 * @param g giocatore che finisce sulla casella di proprietà
+	 * 
+	 */
 	void attivaEffetto(Giocatore g) {
 		// TODO Auto-generated method stub
 		if(!stato) {
