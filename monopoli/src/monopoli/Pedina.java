@@ -1,15 +1,18 @@
 package monopoli;
 
 import java.util.Scanner;
-/**classe che rappresenta la pedina che si muove sul tabellone
- * 
- * @author Daniele Brignole
- * 
+// TODO: Auto-generated Javadoc
+
+/**
+ * classe che rappresenta la pedina che si muove sul tabellone.
  *
+ * @author Daniele Brignole
  */
 public class Pedina {
-	/**inizializza la pedina e la mette nella posizione iniziale del tabellone
-	 * 
+	
+	/**
+	 * inizializza la pedina e la mette nella posizione iniziale del tabellone.
+	 *
 	 * @param nome nome della pedina
 	 */
 	Pedina(String nome){
@@ -21,13 +24,20 @@ public class Pedina {
 		//System.out.println("attuale: "+ attuale.getNome());
 		
 	}
+	
+	/**
+	 * Sets the proprietario.
+	 *
+	 * @param g the new proprietario
+	 */
 	public void setProprietario(Giocatore g){
 		proprietario = g;
 	}
-	/**muove la pedina di una quantità di caselle pari alla somma di due dadi
+	
+	/**
+	 * muove la pedina di una quantità di caselle pari alla somma di due dadi
 	 * se il tiro è un doppio si tira di nuovo
-	 * se è la terza volta che si tira il giocatore va in prigione
-	 * 
+	 * se è la terza volta che si tira il giocatore va in prigione.
 	 */
 	public void muovi(){
 		//if(scan == null) System.out.println("lo scanner è nullo");
@@ -62,14 +72,41 @@ public class Pedina {
 		ntiri = 0;
 		
 	}
+	
+	/**
+	 * Gets the posizione.
+	 *
+	 * @return the posizione
+	 */
 	public Casella getPosizione(){
 		return attuale;
 	}
 	
+	/** The nome. */
 	private String nome;
+	
+	/**
+	 * The posizione.
+	 */
 	private int posizione;
+	
+	/**
+	 * The tab.
+	 */
 	private Tabellone tab;
+	
+	/**
+	 * The attuale.
+	 */
 	private Casella attuale = new Proprietà(0,"Via",0,-1,1,1);
+	
+	/**
+	 * The ntiri.
+	 */
 	private int ntiri = 0;
+	
+	/**
+	 * The proprietario.
+	 */
 	private Giocatore proprietario = null;
 }

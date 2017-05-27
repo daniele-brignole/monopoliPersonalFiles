@@ -10,9 +10,9 @@ public class Tasse extends Casella{
 	 * @param p posizione nel tabellone
 	 * @param n nome della casella
 	 */
-	Tasse(int p, String n) {
+	Tasse(int p, String n, int importo) {
 		super(p, n);
-		posizione = p; nome = n;
+		posizione = p; nome = n;this.importo = importo;
 	}
 	/**attiva l'effetto della casella, facendo pagare il giocatore
 	 * @param g giocatore che finisce sulla cassella tasse
@@ -21,12 +21,12 @@ public class Tasse extends Casella{
 	@Override
 	void attivaEffetto(Giocatore g) {
 		System.out.println("Tasse devi pagare 1000 lire!");
-		g.pay(1000);
+		g.pay(importo);
 	}
 
 	@Override
 	String getNome() {
 		return nome;
 	}
-
+	private int importo;
 }

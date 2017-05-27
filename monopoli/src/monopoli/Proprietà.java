@@ -8,23 +8,46 @@ import java.util.Scanner;
  *
  */
 public class Proprietà extends Casella {
-	/*
-	private static int fucsia = 1;
-	private static int blu = 2;
-	private static int arancione = 3;
-	private static int marrone = 4;
-	private static int rosso = 5;
-	private static int giallo = 6;
-	private static int verde = 7;
-	private static int viola = 8;
-	*/
+	
+	/**
+	 * The zona.
+	 */
+	
 	private int zona;
+	
+	/**
+	 * The valore.
+	 */
 	private int valore;
+	
+	/**
+	 * The stato.
+	 */
 	private boolean stato = false;
+	
+	/**
+	 * The proprietario.
+	 */
 	private Giocatore proprietario = null;
+	
+	/**
+	 * The ipotecata.
+	 */
 	private boolean ipotecata = false;
+	
+	/**
+	 * The numero case.
+	 */
 	private int numeroCase = 0;
+	
+	/**
+	 * The albergo.
+	 */
 	private int albergo = 0;
+	
+	/**
+	 * The c.
+	 */
 	private Contratto c;
 	/**inizializza l'oggetto proprietà con i valori di parametro
 	 * 
@@ -143,8 +166,8 @@ public class Proprietà extends Casella {
 	@Override
 	/**Metodo che controlla se la proprietà su cui è finito il giocatore 
 	 * è libera o occupata e ne permette l'acquisto nel primo caso (con possibile rifiuto 
-	 * e conseguente messa in asta della proprietà, non definito) o
-	 * il agamento dell'affitto nel secondo caso
+	 * e conseguente messa in asta della proprietà) o
+	 * il pagamento dell'affitto nel secondo caso
 	 * @param g giocatore che finisce sulla casella di proprietà
 	 * 
 	 */
@@ -158,6 +181,8 @@ public class Proprietà extends Casella {
 			if (risp.equals("s")) compra(g);
 			else if(risp.equals("n")) {
 				System.out.println("Non hai comprato la proprietà, verrà messa all'asta");
+				
+				Asta asta = new Asta(500,this,null);
 				return;
 			}
 			else {

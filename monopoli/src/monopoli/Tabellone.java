@@ -5,6 +5,10 @@ package monopoli;
  *
  */
 public class Tabellone {
+	
+	/**
+	 * The caselle.
+	 */
 	private Casella[] caselle = new Casella[12];
 	/**inizializza il tabellone impostando le 13 caselle
 	 * 
@@ -14,7 +18,7 @@ public class Tabellone {
 		caselle[1] = new Proprietà(1,"Vicolo Corto",6000,1,1,1);
 		caselle[2] = new Probabilità(2,"probabilità");
 		caselle[3] = new Proprietà(3,"Vicolo Stretto",6000,1,1,1);
-		caselle[4] = new Tasse(4,"Tassa patrimoniale");
+		caselle[4] = new Tasse(4,"Tassa patrimoniale",5000);
 		caselle[5] = new Proprietà(5,"Stazione Sud",20000,10,1,1);
 		caselle[6] = new Proprietà(6,"Bastioni Gran Sasso",10000,2,1,1);
 		caselle[7] = new Imprevisti(7,"imprevisto");

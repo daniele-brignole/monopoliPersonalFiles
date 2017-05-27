@@ -2,6 +2,7 @@ package monopoli;
 
 import java.io.IOException;
 import java.util.ArrayList;
+// TODO: Auto-generated Javadoc
 /**classe che rappresenta una partita a monopoli, imposta 
  * alcune opzioni e decide l'ordine dei giocatori. Gestisce 
  * gli eventi nel corso della partita
@@ -11,19 +12,55 @@ import java.util.ArrayList;
  *
  */
 public class Partita {
+	
+	/**
+	 * The n giocatori.
+	 */
 	private int nGiocatori;
+	
+	/**
+	 * The counter turni.
+	 */
 	private int counterTurni;
+	
+	/**
+	 * The players.
+	 */
 	private ArrayList<Giocatore> players = new ArrayList<Giocatore>();
+	
+	/**
+	 * The order.
+	 */
 	private ArrayList<Giocatore> order = new ArrayList<Giocatore>();
+	
+	/**
+	 * The giocatore di turno.
+	 */
 	private Giocatore giocatoreDiTurno;
+	
+	/**
+	 * The risultati.
+	 */
 	private ArrayList<Integer> risultati= new ArrayList<Integer>();
+	
+	/**
+	 * The g.
+	 */
 	private int g = 0;
+	
+	/**
+	 * Instantiates a new partita.
+	 *
+	 * @param p the p
+	 */
 	Partita(Partita p){
 		
 	};
-	/**costruisce l'oggetto partita inizializzando la lista dei giocatori, 
-	 * quindi determina l'ordine in cui essi agiranno
-	 * 
+	
+	/**
+	 * costruisce l'oggetto partita inizializzando la lista dei giocatori, 
+	 * quindi determina l'ordine in cui essi agiranno.
+	 *
 	 * @param nG numero di giocatori
 	 * @param players lista dei giocatori non ordinata
 	 */
@@ -46,17 +83,19 @@ public class Partita {
 		}
 		giocatoreDiTurno = this.order.get(0);
 	}
-	/**passa il turno al giocatore successivo
-	 * 
+	
+	/**
+	 * passa il turno al giocatore successivo.
 	 */
 	public void passaGiocatore(){
 		g++;
 		if (g > nGiocatori) g = 0;
 		giocatoreDiTurno = order.get(g);
 	}
-	/**genera gli oggetti pedine disponibili e fa scegliere ai giocatori in ordine la 
-	 * pedina che desiderano avere
-	 * 
+	
+	/**
+	 * genera gli oggetti pedine disponibili e fa scegliere ai giocatori in ordine la 
+	 * pedina che desiderano avere.
 	 */
 	public void generaPedine(){
 		Pedina fungo = new Pedina("Fungo");

@@ -27,6 +27,9 @@ public class Imprevisti extends Casella{
 		System.out.println("Pesca un imprevisto!");
 	}
 
+	/* (non-Javadoc)
+	 * @see monopoli.Casella#getNome()
+	 */
 	@Override
 	String getNome() {
 		return nome;
