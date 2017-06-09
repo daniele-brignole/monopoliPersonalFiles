@@ -1,0 +1,28 @@
+package monopoli;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+import static org.mockito.Mockito.*;
+public class PedinaTest {
+	Pedina p; Tabellone tab;
+	@Before
+	public void setUp() throws Exception {
+		p = new Pedina("fungo");
+		Giocatore mockPlayer = mock(Giocatore.class);
+		p.setProprietario(mockPlayer);
+		when(mockPlayer.tiradado1()).thenReturn(2);
+		when(mockPlayer.tiradado2()).thenReturn(3);
+		tab = new Tabellone();
+		
+	}
+
+	@Test
+	public void test() {
+		p.muovi();
+		System.out.println(p.getPosizione().getNome());
+		assertEquals(p.getPosizione().getNome(), tab.getCasella(5).getNome());
+	}
+
+}

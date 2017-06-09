@@ -1,0 +1,11 @@
+package monopoli;
+import org.junit.runners.Suite;
+import org.junit.runner.RunWith;
+
+@RunWith(Suite.class)
+@Suite.SuiteClasses({ContrattoTest.class,Propriet‡Test.class,PedinaTest.class,PartitaTest.class,creaPartitaTest.class,Tabellone.class
+	AstaTest.class})
+
+public class TestSuite {
+
+}

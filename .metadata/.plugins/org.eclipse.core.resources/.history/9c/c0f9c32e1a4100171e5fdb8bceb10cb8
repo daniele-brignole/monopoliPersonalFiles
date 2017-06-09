@@ -1,8 +1,0 @@
-package monopoli;
-
-public class Contratto {
-	private int affitto;
-	private int houses;
-	private boolean albergo = false;
-	private int ipoteca;
-}

@@ -1,0 +1,14 @@
+package monopoli;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TestBanca {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

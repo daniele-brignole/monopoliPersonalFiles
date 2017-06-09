@@ -1,0 +1,24 @@
+package monopoli;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class Propriet‡Test {
+	Propriet‡ p; Banca B;
+	@Before
+	public void setUp() throws Exception {
+		p = new Propriet‡(1,"Via gatto",500,1,500,1);
+		
+	}
+
+	@Test
+	public void testPagaAffitto() {
+		Giocatore g = new Giocatore("pino", "bussola");
+		g.setSoldi(10000);
+		p.pagaAffitto(g);
+		assertEquals(9500,g.getSoldi());
+	}
+
+}

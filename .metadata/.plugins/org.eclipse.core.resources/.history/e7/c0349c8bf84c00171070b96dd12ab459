@@ -1,0 +1,61 @@
+package monopoli;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class GiocatoreTest {
+	Giocatore g,g1;
+	@Before
+	public void setUp() throws Exception {
+		g = new Giocatore("Daniele","pennuto");
+		g1 = new Giocatore("Matteo", "marzapane");
+		g.setSoldi(1000); g1.setSoldi(1000);		
+	}
+
+	@Test
+	public void testGiocatore() {
+		assertNotNull(g);
+		assertEquals("Daniele", g.getNome());
+		assertEquals("pennuto",g.getPassword());
+	}
+	
+	@Test
+	public void testPay(){
+		g.pay(g1, 500);
+		assertEquals(500,g.getSoldi());
+		assertEquals(1500,g1.getSoldi());
+	}
+	@Test
+	public void testPayBanca(){
+		g.setSoldi(1000);
+		g.pay(500);
+		assertEquals(500,g.getSoldi());
+	}
+	@Test
+	public void testDadi(){
+		int dado1 = g.tiradado1();
+		int dado2 = g.tiradado2();
+		assertTrue(dado1 > 0 && dado1 < 7 && dado2 > 0 && dado2 < 7);
+	}
+	@Test
+	public void testSumOfDice(){
+		int dado1 = 2;
+		int dado2 = 5;
+		assertEquals(7,g.makeSum(dado1, dado2));
+	}
+	@Test
+	public void testIsDouble(){
+		int d1 = 2;
+		int d2 = 2;
+		assertTrue(g.isDouble(d1, d2));
+		d1 = 3;
+		assertFalse(g.isDouble(d1, d2));
+	}
+	@Test
+	public void testPrigione(){
+		g.setPrigion();
+		assertTrue(g.get)
+	}
+}

@@ -1,0 +1,38 @@
+package monopoli;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class GiocatoreTest {
+	Giocatore g,g1;
+	@Before
+	public void setUp() throws Exception {
+		g = new Giocatore("Daniele","pennuto");
+		g1 = new Giocatore("Matteo", "marzapane");
+		g.setSoldi(1000); g1.setSoldi(1000);		
+	}
+
+	@Test
+	public void testGiocatore() {
+		assertNotNull(g);
+		assertEquals("Daniele", g.getNome());
+		assertEquals("pennuto",g.getPassword());
+	}
+	
+	@Test
+	public void testPay(){
+		g.pay(g1, 500);
+		assertEquals(500,g.getSoldi());
+		assertEquals(1500,g1.getSoldi());
+	}
+	@Test
+	public void testPayBanca(){
+		g.setSoldi(1000);
+		g.pay(500);
+		assertEquals(500,g.getSoldi());
+	}
+	@Test
+	public void 
+}

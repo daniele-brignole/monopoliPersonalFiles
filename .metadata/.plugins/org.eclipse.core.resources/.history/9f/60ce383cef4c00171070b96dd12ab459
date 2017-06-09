@@ -1,0 +1,40 @@
+package monopoli;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class creaPartitaTest {
+	creaPartita cp; Giocatore g; Partita p;
+	@Before
+	public void setUp() throws Exception {
+		cp = new creaPartita();
+		g = new Giocatore("D","");
+		p = null;
+	}
+
+	@Test
+	public void testCreaPartita() {
+		cp = new creaPartita();
+		assertNotNull(cp);
+	}
+	@Test
+	public void setimpostazioniTest(){
+		cp.setImpostazioni(2, 80000, 5);
+		assertEquals(2, cp.getNumeroGiocatori());
+		assertEquals(80000,cp.getSoldiIniziali());
+		assertEquals(5,cp.getContrattiIniziali());
+		
+	}
+	@Test
+	public void startTest(){
+		cp.setImpostazioni(2, 80000, 5);
+		p = cp.start(g);
+		assertNotNull(p);
+		assertEquals(2,p.getPlayers().size());
+		assertEquals(80000,g.getSoldi());
+		assertEquals(5,g.getContratti());
+	}
+
+}

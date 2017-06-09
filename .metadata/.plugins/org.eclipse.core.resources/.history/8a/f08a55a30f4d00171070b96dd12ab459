@@ -1,0 +1,20 @@
+package monopoli;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class TasseTest {
+	Tasse t;
+	@Before
+	public void setUp() throws Exception {
+		t = Tasse(1,"Tassa di Steven", 15000);
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}
