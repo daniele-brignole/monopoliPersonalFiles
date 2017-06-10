@@ -84,7 +84,7 @@ public class Proprietà extends Casella {
 	public void pagaAffitto(Giocatore pagante){
 		int affitto = c.calcolaAffitto();
 		int remainder = (pagante.getSoldi() - affitto);
-		//if (remainder < 0 ) pagante.gameOver(); //per motivi di implementazione il giocatore perde
+		if (remainder < 0 ) pagante.gameOver(); //per motivi di implementazione il giocatore perde
 		pagante.pay(this.proprietario, affitto);;
 	}
 	public boolean isOccupata(){

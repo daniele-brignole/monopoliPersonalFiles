@@ -86,9 +86,9 @@ public class GiocatoreTest {
 	}
 	@Test
 	public void testPrigione(){
-		g.setPrigion();
+		g.putPrigion();
 		assertTrue(g.isPrigion());
-		g.setFree();
+		g.putFree();
 		assertFalse(g.isPrigion());
 	}
 	@Test

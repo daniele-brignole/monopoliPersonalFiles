@@ -1,0 +1,86 @@
+package monopoli;
+/**
+ * classe di creazione del torneo
+ * @author Daniele Brignole
+ *
+ */
+public class Torneo {
+	/**
+	 * costruttore del torneo, guarda se esiste già una partita online, nel caso pone 
+	 * id = 1 e partecipanti = 16, altrimenti crea un nuovo torneo, id= 0, partecipanti = 1;
+	 */
+	Torneo(){
+		if(partecipaTorneo()){
+			id = 1;
+			numeroPartecipanti = 16;
+		}
+		else{
+			id = 0;
+			numeroPartecipanti = 1;
+		}
+	}
+	/**
+	 * metodo di partecipazione a un torneo
+	 * @return true se partecipa a un torneo esistente, false altrimenti
+	 */
+	public boolean partecipaTorneo(){
+		if(ricercaPosto()) return true;
+		
+		return false;
+	}
+	/**
+	 * metodo di ricerca di un torneo
+	 * @return false, non esistendo un implementazione di ricerca online,
+	 *  creerà sempre un torneo nuovo
+	 */
+	public boolean ricercaPosto(){
+		
+		return false;
+	}
+	
+	/**
+	 * The numero partecipanti.
+	 */
+	private int numeroPartecipanti;
+	
+	/**
+	 * The id.
+	 */
+	private int id;
+	
+	/**
+	 * Gets the numero partecipanti.
+	 *
+	 * @return the numero partecipanti
+	 */
+	public int getNumeroPartecipanti() {
+		return numeroPartecipanti;
+	}
+	
+	/**
+	 * Sets the numero partecipanti.
+	 *
+	 * @param numeroPartecipanti the new numero partecipanti
+	 */
+	public void setNumeroPartecipanti(int numeroPartecipanti) {
+		this.numeroPartecipanti = numeroPartecipanti;
+	}
+	
+	/**
+	 * Gets the id.
+	 *
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+	
+	/**
+	 * Sets the id.
+	 *
+	 * @param id the new id
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+}

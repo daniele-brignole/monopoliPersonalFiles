@@ -1,0 +1,19 @@
+package monopoli;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+//test funzionale del caso d'uso impostare l'ordine dei giocatori
+public class DeterminaOrdineTest {
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

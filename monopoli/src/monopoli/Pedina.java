@@ -63,7 +63,7 @@ public class Pedina {
 			System.out.println("doppio");
 			ntiri++;
 			if (ntiri == 3){
-				proprietario.setPrigion();
+				proprietario.putPrigion();
 				ntiri = 0;
 				return;
 			}

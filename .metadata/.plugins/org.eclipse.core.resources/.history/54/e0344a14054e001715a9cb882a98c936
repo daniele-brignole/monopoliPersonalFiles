@@ -1,0 +1,27 @@
+package monopoli;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class TorneoTest {
+	Torneo T;
+	@Before
+	public void setUp() throws Exception {
+		T = new Torneo();
+	}
+
+	@Test
+	public void testTorneo() {
+		assertNotNull(T);
+	}
+	@Test
+	public void testGetSet(){
+		T.setId(1);
+		T.setNumeroPartecipanti(5);
+		assertEquals(1,T.getId());
+		assertEquals(5,T.getNumeroPartecipanti());
+	}
+
+}

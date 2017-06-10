@@ -1,0 +1,23 @@
+package monopoli;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+ 
+public class MuovipedinaTest {
+	Giocatore g; Pedina p;
+	@Before
+	public void setUp() throws Exception {
+		g = new Giocatore("Daniele","psw"); p = new Pedina("fungo");
+		g.setPedina(p); p.setProprietario(g);
+	}
+
+	@Test
+	public void test() {
+		Casella c = p.getAttuale();
+		p.muovi();
+		assertNotEquals(c,p.getAttuale());
+	}
+
+}

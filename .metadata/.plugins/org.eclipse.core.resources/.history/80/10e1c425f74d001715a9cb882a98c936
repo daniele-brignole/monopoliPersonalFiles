@@ -1,0 +1,30 @@
+package monopoli;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+import static org.mockito.Mockito.*;
+class CompraPropriet‡LiberaTest {
+	Propriet‡ p; Giocatore g; wrapper w;
+	@Before
+	public void setUp() throws Exception {
+		w = mock
+		p = new Propriet‡(1,"Via Prova",500,1,200,200);
+		g = new Giocatore("Daniele","psw");
+		
+	}
+
+	@Test
+	public void compraE1() {
+		g.getMyProperties().clear();
+		g.setSoldi(1000);
+		assertTrue(p.compra(g));
+	}
+	@Test
+	public void compraE2(){
+		g.getMyProperties().clear();
+		g.setSoldi(200);
+		assertFalse(p.compra(g));
+	}
+}

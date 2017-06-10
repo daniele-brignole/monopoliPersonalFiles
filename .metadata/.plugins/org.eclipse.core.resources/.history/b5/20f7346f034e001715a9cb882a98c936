@@ -1,0 +1,25 @@
+package monopoli;
+
+public class Torneo {
+	Torneo(){
+		if(partecipaTorneo()){
+			id = 1;
+			numeroPartecipanti = 16;
+		}
+		else{
+			id = 0;
+			numeroPartecipanti = 1;
+		}
+	}
+	public boolean partecipaTorneo(){
+		if(ricercaPosto()) return true;
+		
+		return false;
+	}
+	public boolean ricercaPosto(){
+		
+		return false;
+	}
+	private int numeroPartecipanti;
+	private int id;
+}

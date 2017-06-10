@@ -24,7 +24,7 @@ public class inPrigione extends Casella{
 	@Override
 	boolean attivaEffetto(Giocatore g) {
 		// TODO Auto-generated method stub
-		g.setPrigion();
+		g.putPrigion();
 		return false;
 	}
 

@@ -17,6 +17,8 @@ public class Giocatore {
 	/** The nome. */
 	private String nome;
 	
+	/** The game over. */
+	private boolean gameOver = false;
 	/** The password. */
 	private String password;
 	
@@ -170,14 +172,14 @@ public class Giocatore {
 	/**
 	 * manda in prigione il giocatore.
 	 */
-	public void setPrigion(){
+	public void putPrigion(){
 		this.prigion = true;
 	}
 	
 	/**
 	 * libera il giocatore.
 	 */
-	public void setFree(){
+	public void putFree(){
 		this.prigion = false;
 	}
 	
@@ -412,5 +414,29 @@ public class Giocatore {
 	}
 	public void setWrap(wrapper wrap){
 		this.wrap = wrap;
+	}
+
+	/**
+	 * Checks if is game over.
+	 *
+	 * @return true, if is game over
+	 */
+	public boolean isGameOver() {
+		return gameOver;
+	}
+
+	/**
+	 * Sets the game over.
+	 *
+	 * @param gameOver the new game over
+	 */
+	public void setGameOver(boolean gameOver) {
+		this.gameOver = gameOver;
+	}
+	/**
+	 * Metodo per definire la bancarotta di un giocatore
+	 */
+	public void gameOver(){
+		gameOver = true;
 	}
 }

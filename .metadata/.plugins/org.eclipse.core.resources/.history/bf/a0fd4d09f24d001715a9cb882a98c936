@@ -1,0 +1,21 @@
+package monopoli;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class CreaPartitaTestFun {
+	creaPartita cp; Giocatore g; Partita p = null;
+	@Before
+	public void setUp() throws Exception {
+		cp = new creaPartita();g = new Giocatore("Daniele","psw");
+	}
+
+	@Test
+	public void CreaE1() {
+		p = g.addPartita(1, 1, 8000, 2);
+		assertNotNull(p);
+	}
+
+}

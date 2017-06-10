@@ -1,0 +1,46 @@
+package monopoli;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameter;
+import org.junit.runners.Parameterized.Parameters;
+
+import static org.mockito.Mockito.*;
+
+import java.util.Arrays;
+import java.util.Collection;
+@RunWith(Parameterized.class)
+public class TorneoTest {
+	@Parameter(0) public boolean risp;
+	Torneo T;
+	@Before
+	public void setUp() throws Exception {
+		T = mock(Torneo.class);
+		when(T.ricercaPosto()).thenReturn(risp);
+	}
+	@Parameters
+	public static Collection<boolean[]> data(){
+		return Arrays.asList(new boolean[][] {
+			{true},
+			{false}
+		});
+	}
+	
+
+	@Test
+	public void testTorneo() {
+		assertNotNull(T);
+	}
+	@Test
+	public void testGetSet(){
+		T.setId(1);
+		T.setNumeroPartecipanti(5);
+		assertEquals(1,T.getId());
+		assertEquals(5,T.getNumeroPartecipanti());
+	}
+
+}

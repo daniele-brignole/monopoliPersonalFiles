@@ -1,0 +1,22 @@
+package monopoli;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class CompraPropriet‡LiberaTest {
+	Propriet‡ p; Giocatore g;
+	@Before
+	public void setUp() throws Exception {
+		p = new Propriet‡(1,"Via Prova",500,1,200,200);
+		g = new Giocatore("Daniele","psw");
+		g.setSoldi(5);
+	}
+
+	@Test
+	public void test() {
+		p.compra(g);
+	}
+
+}
