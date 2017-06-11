@@ -62,11 +62,9 @@ public class creaPartitaTest {
 		cp.setLivello(0);
 		cp.setNumeroGiocatori(play);
 		cp.setPartecipanti(gl);
-		cp.setSoldiIniziali(500);
 		assertEquals(2,cp.getContrattiIniziali());
 		assertEquals(0,cp.getLivello());
 		assertEquals(play,cp.getNumeroGiocatori());
 		assertEquals(gl.size(),cp.getPartecipanti().size());
-		assertEquals(500,cp.getSoldiIniziali());
 	}
 }

@@ -27,6 +27,9 @@ public class Propriet‡Test {
 	@Parameter(7) public int expectedHouse;
 	@Parameter(8) public String risp;
 	@Parameter(9) public int resto;
+	@Parameter(10) public int soldiGiocatore;
+	@Parameter(11) public int expResto1;
+	@Parameter(12) public int expResto2;
 	@Before
 	public void setUp() throws Exception {
 		p = new Propriet‡(1,"Via gatto",500,var1,500,1);
@@ -39,11 +42,11 @@ public class Propriet‡Test {
 	@Parameters
 	public static Collection<Object[]> data(){
 		return Arrays.asList(new Object[][] {
-			{1,1,2,2,3,2,0,2,"s",500},
-			{3,3,3,11,2,4,1,4,"s",500},
-			{11,11,1,2,3,0,0,0,"n",1000},
-			{10,10,10,10,2,0,0,0,"n",1000},
-			{8,8,2,6,11,35,0,0,"n",1000},
+			{1,1,2,2,3,2,0,2,"s",500,10000,9500,1000},
+			{3,3,3,11,2,4,1,4,"s",500,5000,4500,1000},
+			{11,11,1,2,3,0,0,0,"n",1000,10,0,500},
+			{10,10,10,10,2,0,0,0,"n",1000,200,0,500},
+			{8,8,2,6,11,35,0,0,"n",1000,600,100,1000},
 			
 		});
 	}
@@ -62,23 +65,11 @@ public class Propriet‡Test {
 		Giocatore g2 = new Giocatore("alfredo", "mazza");
 		g.setSoldi(500);
 		p.compra(g);
-		g2.setSoldi(10000);
+		g2.setSoldi(soldiGiocatore);
 		g.setSoldi(500);
 		p.pagaAffitto(g2);
-		assertEquals(9500,g2.getSoldi());
-		assertEquals(1000,g.getSoldi());
-	}
-	@Test
-	public void testPagaAffittoNonSufficienti() {
-		Giocatore g = new Giocatore("pino", "bussola");
-		Giocatore g2 = new Giocatore("alfredo", "mazza");
-		g.setSoldi(500);
-		p.compra(g);
-		g2.setSoldi(100);
-		g.setSoldi(500);
-		p.pagaAffitto(g2);
-		assertEquals(0,g2.getSoldi());
-		assertEquals(500,g.getSoldi());
+		assertEquals(expResto1,g2.getSoldi());
+		assertEquals(expResto2,g.getSoldi());
 	}
 	@Test
 	public void TestCompraSufficienti(){
@@ -99,21 +90,21 @@ public class Propriet‡Test {
 	@Test
 	public void costruisciCaseTest(){
 		p.costruisciCase(houses, B);
-		assertEquals(expectedHouse,p.getNumeroCase());
+		assertEquals(p.getNumeroCase(),expectedHouse);
 	}
 	@Test
 	public void costruisciAlbergo(){
 		B.setAlberghi(30);
 		p.setNumeroCase(houses);
 		p.costruisciAlbergo(B);
-		assertEquals(albergo,p.getAlbergo());
+		assertEquals(p.getAlbergo(),albergo);
 	}
 	@Test
 	public void costruisciAlbergoBancaPovera(){
 		B.setAlberghi(0);
 		p.setNumeroCase(4);
 		p.costruisciAlbergo(B);
-		assertEquals(0,p.getAlbergo());
+		assertEquals(p.getAlbergo(),0);
 	}
 	@Test
 	public void attivaEffettoTest(){

@@ -126,7 +126,6 @@ public class GiocatoreTest {
 		g.setRis2(1);
 		g.setSoldi(7000);
 		g.setSumofDice(8);
-		g.setGameOver(true);
 		assertEquals(2,g.getContratti());
 		assertEquals(1,g.getCountJail());
 		assertEquals(lp.size(),g.getMyProperties().size());
@@ -137,7 +136,6 @@ public class GiocatoreTest {
 		assertEquals(1,g.getRis2());
 		assertEquals(7000,g.getSoldi());
 		assertEquals(8,g.getSumofDice());
-		assertTrue(g.isGameOver());
 	}
 	@Test
 	public void testMakeChoice() throws IOException{

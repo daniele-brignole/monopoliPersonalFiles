@@ -69,18 +69,6 @@ public class Propriet‡Test {
 		assertEquals(1000,g.getSoldi());
 	}
 	@Test
-	public void testPagaAffittoNonSufficienti() {
-		Giocatore g = new Giocatore("pino", "bussola");
-		Giocatore g2 = new Giocatore("alfredo", "mazza");
-		g.setSoldi(500);
-		p.compra(g);
-		g2.setSoldi(100);
-		g.setSoldi(500);
-		p.pagaAffitto(g2);
-		assertEquals(0,g2.getSoldi());
-		assertEquals(500,g.getSoldi());
-	}
-	@Test
 	public void TestCompraSufficienti(){
 		Giocatore g = new Giocatore("pino", "bussola");
 		g.setSoldi(1000);
@@ -99,21 +87,21 @@ public class Propriet‡Test {
 	@Test
 	public void costruisciCaseTest(){
 		p.costruisciCase(houses, B);
-		assertEquals(expectedHouse,p.getNumeroCase());
+		assertEquals(p.getNumeroCase(),expectedHouse);
 	}
 	@Test
 	public void costruisciAlbergo(){
 		B.setAlberghi(30);
 		p.setNumeroCase(houses);
 		p.costruisciAlbergo(B);
-		assertEquals(albergo,p.getAlbergo());
+		assertEquals(p.getAlbergo(),albergo);
 	}
 	@Test
 	public void costruisciAlbergoBancaPovera(){
 		B.setAlberghi(0);
 		p.setNumeroCase(4);
 		p.costruisciAlbergo(B);
-		assertEquals(0,p.getAlbergo());
+		assertEquals(p.getAlbergo(),0);
 	}
 	@Test
 	public void attivaEffettoTest(){
@@ -125,10 +113,10 @@ public class Propriet‡Test {
 		g.setSoldi(1000);
 		p.setStato(false);
 		p.attivaEffetto(g);
-		assertEquals(resto,g.getSoldi());
+		assertEquals(g.getSoldi(),resto);
 		p.setStato(true);
 		p.attivaEffetto(g);
-		assertEquals(resto,g.getSoldi());
+		assertEquals(g.getSoldi(),resto);
 		//assertEquals(g.getListOfProperties().size(),1);
 		
 	}
