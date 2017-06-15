@@ -63,6 +63,11 @@
 				<item value="C:\Users\Tiziana\Documents\GitHub\monopoliPersonalFiles\monopoli\doc" key="destdir"/>
 				<item value="" key="href"/>
 			</section>
+			<section name="Calculator">
+				<item value="C:\Users\Tiziana\Desktop\Università_Archivio\Calculator\javadoc.xml" key="antpath"/>
+				<item value="C:\Users\Tiziana\Desktop\Università_Archivio\Calculator\doc" key="destdir"/>
+				<item value="" key="href"/>
+			</section>
 			<section name="RemoteSystemsTempFiles">
 				<item value="C:\Users\Tiziana\Documents\GitHub\monopoliPersonalFiles\RemoteSystemsTempFiles\javadoc.xml" key="antpath"/>
 				<item value="C:\Users\Tiziana\Documents\GitHub\monopoliPersonalFiles\RemoteSystemsTempFiles\doc" key="destdir"/>
